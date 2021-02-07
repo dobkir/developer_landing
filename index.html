@@ -30,7 +30,7 @@
             <nav class="nav">
                 <ul class="nav__bar">
                     <li>
-                        <a class="nav__item" href="#homepage">Главная</a>
+                        <a class="nav__item active__link" href="#homepage">Главная</a>
                     </li>
                     <li>
                         <a class="nav__item" href="#about_page">Об авторе</a>
@@ -46,12 +46,12 @@
                     </li>
                 </ul>
             </nav>
-        </header><!--/.header-->
+        </header>
+        <!--/.header-->
 
         <main class="main">
-            <div class="home">
-                <p name="tab" id="homepage"></p>
-                <!--tab - точные координаты скролла-->
+            <div class="home" id="homepage">
+
                 <div class="home__left">
                     <img class="home__promo" src=" img/development_png.png" alt="promo_image">
                 </div>
@@ -59,69 +59,78 @@
                 <div class="home__rigth">
                     <section class="home__section">
                         <h1 class="home__title">Hello, world!</h1>
-                        <p class="home__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore est temporibus aliquid architecto atque nemo voluptatibus tempore molestias fugit praesentium explicabo facere eligendi vero repudiandae nobis asperiores neque maxime quis eveniet dolor alias, minima mollitia quidem. Doloribus temporibus molestiae, commodi laudantium eum dolore aut inventore tempore eaque! Nam quisquam et officiis sunt temporibus quod autem eveniet dignissimos facilis. Autem temporibus ipsum ipsam expedita blanditiis unde veniam fugit, recusandae laudantium voluptas asperiores vitae sunt eos, atque beatae sapiente adipisci inventore.</p>
+                        <p class="home__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+                            est temporibus aliquid architecto atque nemo voluptatibus tempore molestias fugit
+                            praesentium explicabo facere eligendi vero repudiandae nobis asperiores neque maxime quis
+                            eveniet dolor alias, minima mollitia quidem. Doloribus temporibus molestiae, commodi
+                            laudantium eum dolore aut inventore tempore eaque! Nam quisquam et officiis sunt temporibus
+                            quod autem eveniet dignissimos facilis. Autem temporibus ipsum ipsam expedita blanditiis
+                            unde veniam fugit, recusandae laudantium voluptas asperiores vitae sunt eos, atque beatae
+                            sapiente adipisci inventore.</p>
                         <button class="btn" type="button" id="btn_home">Написать мне</button>
                     </section>
                     <div class="overlay" id="overlay_home"></div>
                 </div>
-                <a href="#about_page"><svg class="down__arrow">
-                        <use xlink:href="sprite.svg#down_arrow_icon">
-                        </use>
-                    </svg></a>
+
             </div>
             <!--home-->
 
-            <div class="about">
-                <!--tab - точные координаты скролла-->
-                <p name="tab" id="about_page"></p>
+            <div class="about" id="about_page">
+
+                <a href="#about_page">
+                    <svg class="down__arrow">
+                        <use xlink:href="sprite.svg#down_arrow_icon">
+                        </use>
+                    </svg></a>
                 <div class="about__story">
                     <h2>About me</h2>
                 </div>
                 <div class="about__numbers">
                     <p>Here visualize numbers</p>
                 </div>
-                <a href="#work_page"><svg class="down__arrow">
-                        <use xlink:href="sprite.svg#down_arrow_icon">
-                        </use>
-                    </svg></a>
+
             </div>
             <!--/.about-->
 
-            <div class="work">
-                <!--tab - точные координаты скролла-->
-                <p name="tab" id="work_page"></p>
+            <div class="work" id="work_page">
+
+                <a href="#work_page">
+                    <svg class="down__arrow">
+                        <use xlink:href="sprite.svg#down_arrow_icon">
+                        </use>
+                    </svg></a>
                 <div class="work__story">
                     <h2>Работы</h2>
                 </div>
                 <div class="work__numbers">
                     <p>my works page</p>
                 </div>
-                <a href="#process_page"><svg class="down__arrow">
-                        <use xlink:href="sprite.svg#down_arrow_icon">
-                        </use>
-                    </svg></a>
+
             </div>
             <!--/.work-->
 
-            <div class="process">
-                <!--tab - точные координаты скролла-->
-                <p name="tab" id="process_page"></p>
+            <div class="process" id="process_page">
+                <a href="#process_page">
+                    <svg class="down__arrow">
+                        <use xlink:href="sprite.svg#down_arrow_icon">
+                        </use>
+                    </svg></a>
                 <div class="process__story">
                     <h2>Процесс</h2>
                 </div>
                 <div class="process__numbers">
                     <p>work process</p>
                 </div>
-                <a href="#contacts_page"><svg class="down__arrow">
-                        <use xlink:href="sprite.svg#down_arrow_icon">
-                        </use>
-                    </svg></a>
+
             </div>
             <!--/.process-->
 
-            <div class="contacts">
-                <!--tab - точные координаты скролла-->
-                <p name="tab" id="contacts_page"></p>
+            <div class="contacts" id="contacts_page">
+                <a href="#contacts_page">
+                    <svg class="down__arrow">
+                        <use xlink:href="sprite.svg#down_arrow_icon">
+                        </use>
+                    </svg></a>
                 <div class="contacts__story">
                     <h2>Контакты</h2>
                 </div>

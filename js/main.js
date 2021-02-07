@@ -18,31 +18,43 @@ $(document).ready(() => {
     });
 
     // При наведении или фокусе на #btn_home, opacity оверлея меняется
-    //    $('#btn_home').hover(
-    //        function () {
-    //            $('#overlay_home').css('opacity', '.8');
-    //        },
-    //        function () {
-    //            $('#overlay_home').css('opacity', '.15');
-    //        });
-    // Ну или так
     $('.btn').hover((event) => {
         $('.overlay, .home__title, .home__description').toggleClass('opacity--1')
     })
 })
 
-// window.onscroll = () => {
-//     let pages = document.querySelectorAll('.page');
-//     let navs = document.querySelectorAll('.nav__link');
-//     pages.forEach((el, i) => {
-//         let top = el.offsetTop - 110;
-//         let bottom = top + el.scrollHeight;
-//         let scroll = window.scrollY;
-//         let id = el.getAttribute('id');
-//         if (scroll > top && scroll < bottom) {
-//             navs.forEach(el => el.classList.remove('active__link'));
-//             document.querySelector('a[href="#' + id + '"]').classList.add('active__link');
-//         }
+//===== Page observer
 
-//     })
-// };
+const targets = document.querySelectorAll('div[id]');
+const links = document.querySelectorAll('.nav__item');
+const options = {
+    root: document.querySelector('home'),
+    rootMargin: '0px',
+    threshold: 0.7
+};
+
+function activeLink(element) {
+    element.classList.add('active__link');
+};
+
+function removeActiveLink(element) {
+    element.classList.remove('active__link');
+};
+
+const loadID = function (entries, observer) {
+    entries.forEach(entry => {
+        links.forEach(link => {
+            if (entry.isIntersecting && entry.target.id === link.hash.substring(1))
+                return activeLink(link);
+            if (entry.isIntersecting && entry.target.id !== link.hash.substring(1))
+                return removeActiveLink(link);
+        });
+    });
+};
+
+const observer = new IntersectionObserver(loadID, options);
+
+targets.forEach(target => {
+    observer.observe(target);
+});
+

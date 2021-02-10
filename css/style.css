@@ -408,7 +408,7 @@ input {
     max-width: 1280px;
     height: 8rem;
 
-    font-size: small;
+    font-size: 1.2rem;
     color: #E5E5E5;
 
     background-color: #34547A;
@@ -707,10 +707,18 @@ input {
 
 /* Media
 ===============================*/
+
+/* Media max-width: 767px
+===============================*/
+
 @media (max-width:767px) {
 
     body {
         margin: 5rem auto 5rem;
+    }
+
+    .main {
+        margin-top: 5rem;
     }
 
     .header {
@@ -722,14 +730,21 @@ input {
         width: 5rem;
     }
 
-    .home,
+    .home {
+        border-top: 5rem;
+        margin-top: -5rem;
+        /* min-height: 100vh; */
+        min-height: calc(100vh - 5rem);
+    }
+
     .about,
     .portfolio,
     .process,
     .contact {
-        border-top: 5rem;
+        border-top: 5rem solid transparent;
         margin-top: -5rem;
         min-height: calc(100vh - 5rem);
+        /* min-height: 100vh; */
     }
 
     .home__left,
@@ -785,6 +800,10 @@ input {
 
     .footer {
         height: 5rem;
+    }
+
+    .btn--small+.btn {
+        display: inherit;
     }
 
     /* Burger-navigation
@@ -938,5 +957,40 @@ input {
     /* End of burger-navigation ===============================*/
 
 }
+
+/* End of Media max-width: 767px
+===============================*/
+
+/* Media max-width: 379px
+===============================*/
+@media (max-width:379px) {
+    html {
+        font-size: 8px;
+    }
+
+    .footer {
+        height: 5.2rem;
+        font-size: 1.2rem;
+    }
+
+    p {
+        margin: 0 0 .7rem;
+    }
+
+    .modal__content--contact {
+        margin: 2rem 4rem 0;
+    }
+
+    .modal__footer {
+        flex-direction: column;
+    }
+
+    .modal__footer li {
+        margin: 0 .5rem .5rem;
+    }
+}
+
+/* End of Media max-width: 379px
+===============================*/
 
 /* End of media ===============================*/

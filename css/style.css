@@ -138,14 +138,11 @@ input {
 
     text-decoration: none;
 
-    transform: translate3d(-.5rem, .5rem, -.5rem) skew(-20deg);
+    transform: translate3d(-.5rem, .5rem, -.5rem) skew(-10deg);
 }
 
-/* 
-.nav__item:hover:after,
-.nav__item:focus:after, */
 .active__link {
-    transform: skew(-20deg);
+    transform: skew(-10deg);
     display: block;
     margin-left: 3rem;
 
@@ -270,7 +267,7 @@ input {
 
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 1px;
 
     box-shadow: 0 3px 3px rgba(52, 84, 122, 0.6);
 }
@@ -280,10 +277,19 @@ input {
 ===============================*/
 
 .about {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+        "about__header about__header"
+        "about__banner about__banner"
+        "about__photo about__skills";
+    justify-items: center;
+    align-items: center;
     border-top: 8rem solid transparent;
     margin-top: -8rem;
     padding: 2rem;
-    display: flex;
     width: inherit;
     min-height: calc(100vh - 8rem);
 
@@ -303,11 +309,94 @@ input {
 
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 1px;
 
     box-shadow: 0 3px 3px rgba(52, 84, 122, 0.6);
 }
 
+.about__header {
+    grid-area: about__header;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.about__title {
+    text-align: center;
+}
+
+.about__article {
+    text-align: justify;
+}
+
+.about__banner {
+    grid-area: about__banner;
+    display: grid;
+    padding: 0 2rem;
+    grid-template-columns: repeat(6, 1fr [about__ico]);
+    place-items: center end;
+
+    line-height: 1.4;
+    color: #E5E5E5;
+
+    background: #34547A;
+}
+
+.about__ico {
+    grid-area: about__ico;
+
+    color: #E5E5E5;
+}
+
+.about__ico2,
+.about__ico4,
+.about__ico6 {
+    margin-right: auto;
+}
+
+.about__banner i {
+    margin: .2rem;
+    font-size: 3.4rem;
+}
+
+.about__banner p {
+    margin: .8rem;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.about__skills {
+    grid-area: about__skills;
+
+
+    color: #112D4F;
+}
+
+.my__skills {
+    padding: 0 1rem 0;
+    list-style: circle inside;
+    line-height: 1.5;
+}
+
+.my__skills strong {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.about__photo {
+    grid-area: about__photo;
+    text-align: center;
+}
+
+.my__foto {
+    display: block;
+    margin: auto auto;
+    padding: 0 1rem 3rem;
+
+    height: auto;
+    max-width: 60%;
+    min-width: 28rem;
+}
 
 /* Portfolio
 ===============================*/
@@ -336,7 +425,7 @@ input {
 
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 1px;
 
     box-shadow: 0 3px 3px rgba(52, 84, 122, 0.6);
 }
@@ -369,7 +458,7 @@ input {
 
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 1px;
 
     box-shadow: 0 3px 3px rgba(52, 84, 122, 0.6);
 }
@@ -706,11 +795,25 @@ input {
 /* End of form ===============================*/
 
 /* Media
+===========================================================================*/
+
+/* Media max-width: 991px
 ===============================*/
+
+@media (max-width:991px) {
+    .about__banner i {
+        font-size: 2.2rem;
+    }
+
+    .about__banner p {
+        font-size: 1.2rem;
+    }
+}
+
+/* End of media max-width: 991px ===============================*/
 
 /* Media max-width: 767px
 ===============================*/
-
 @media (max-width:767px) {
 
     body {
@@ -728,6 +831,10 @@ input {
     .icon {
         height: 5rem;
         width: 5rem;
+    }
+
+    .down__arrow {
+        display: none;
     }
 
     .home {
@@ -796,6 +903,25 @@ input {
     .home__description.opacity--1 {
         opacity: 0;
         transition: opacity 2s linear;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "about__header"
+            "about__banner"
+            "about__photo"
+            "about__skills";
+    }
+
+    .about__banner {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "about__ico1 about__ico2"
+            "about__ico3 about__ico4"
+            "about__ico5 about__ico6";
+        padding: 0 1.3rem;
     }
 
     .footer {
@@ -884,12 +1010,12 @@ input {
 
     .nav__burger.active:hover:before,
     .nav__burger.active:hover:after {
-        background: #349607;
+        background: #34547A;
     }
 
     .nav__burger.active:focus:before,
     .nav__burger.active:focus:after {
-        background: #349607;
+        background: #34547A;
     }
 
     .nav {
@@ -924,42 +1050,16 @@ input {
         color: #F9F9F9;
     }
 
-    .nav__item:hover,
-    .nav__item:focus {
-        color: #96cc7e;
-
-        text-decoration: none;
-    }
-
-    .nav__item:active {
-        color: #349607;
-    }
-
-    .nav__item:after {
-        margin: -3px auto;
-        display: block;
-        content: '';
-        width: 0;
-        height: 3px;
-        background: #96cc7e;
-        transition: width .5s ease-out;
-    }
-
-    .nav__item:hover:after,
-    .nav__item:focus:after {
-        width: 100%;
-    }
-
-    .nav__item:active:after {
-        background: #349607;
+    .active__link {
+        border-bottom: 3px solid #F9F9F9;
     }
 
     /* End of burger-navigation ===============================*/
 
 }
 
-/* End of Media max-width: 767px
-===============================*/
+/* End of Media max-width: 767px  ===============================*/
+
 
 /* Media max-width: 379px
 ===============================*/
@@ -969,7 +1069,6 @@ input {
     }
 
     .footer {
-        height: 5.2rem;
         font-size: 1.2rem;
     }
 
@@ -988,9 +1087,23 @@ input {
     .modal__footer li {
         margin: 0 .5rem .5rem;
     }
+
+    .about__article {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .about__banner i {
+        font-size: 2rem;
+    }
+
+    .about__banner p {
+        margin: .5rem;
+        font-size: 1.1rem;
+    }
 }
 
-/* End of Media max-width: 379px
-===============================*/
+/* End of Media max-width: 379px  ===============================*/
+
 
 /* End of media ===============================*/

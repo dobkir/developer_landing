@@ -27,7 +27,7 @@ $(document).ready(() => {
 //============ Page observer ============//
 const contactStory = document.querySelector('.contact__story');
 const contactForm = document.querySelector('.contact__form');
-const contactSubtitles = document.querySelectorAll('.contact__subtitle');
+const contactSubtitle = document.querySelector('.contact__subtitle');
 const contactPlatforms = document.querySelector('.contact__platforms');
 const targets = document.querySelectorAll('div[id]');
 const links = document.querySelectorAll('.nav__item');
@@ -57,14 +57,12 @@ const loadID = function (entries, observer) {
     if (entry.target.id === 'contact__page') {
       contactStory.classList.add('contact__story--visible');
       contactForm.classList.add('contact__form--visible');
-      contactSubtitles[0].classList.add('contact__subtitle--visible');
-      contactSubtitles[1].classList.add('contact__subtitle--visible');
+      contactSubtitle.classList.add('contact__subtitle--visible');
       contactPlatforms.classList.add('contact__platforms--visible');
     } else {
       contactStory.classList.remove('contact__story--visible');
       contactForm.classList.remove('contact__form--visible');
-      contactSubtitles[0].classList.remove('contact__subtitle--visible');
-      contactSubtitles[1].classList.remove('contact__subtitle--visible');
+      contactSubtitle.classList.remove('contact__subtitle--visible');
       contactPlatforms.classList.remove('contact__platforms--visible');
     };
   });

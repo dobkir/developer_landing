@@ -97,7 +97,8 @@ input {
     transition: all .4s linear;
 }
 
-.icon:hover {
+.icon:hover,
+.icon:focus {
     fill: #359707;
     filter: drop-shadow(3px 3px 10px rgba(52, 150, 7, 0.6));
     transform: perspective(10rem) rotateX(45deg);
@@ -133,7 +134,8 @@ input {
 }
 
 
-.nav__item:hover {
+.nav__item:hover,
+.nav__item:focus {
     color: #34547A;
 
     text-decoration: none;
@@ -155,7 +157,6 @@ input {
     border-bottom: 3px solid #34547A;
     margin-bottom: 2px;
     transition: all .4s linear;
-    /* transform: translate3d(-.5rem, .5rem, -.5rem) skew(-20deg); */
 }
 
 /* Arrow
@@ -172,7 +173,6 @@ input {
     top: -4rem;
     left: calc(50% - 1.5rem);
 
-    /*    transform: translate(-50%, -50%);*/
     transition: all .4s linear;
     filter: drop-shadow(0 .2rem .1rem rgba(52, 84, 122, 0.6));
     z-index: 5;
@@ -467,6 +467,9 @@ input {
 ===============================*/
 
 .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-top: 8rem solid transparent;
     margin-top: -8rem;
     padding: 2rem;
@@ -480,6 +483,134 @@ input {
     position: relative;
     z-index: 1;
 }
+
+.contact__story {
+    opacity: 0;
+    text-align: center;
+    transform: translateX(-200px);
+    transition: all 1s ease-in-out;
+}
+
+.contact__story--visible {
+    transform: none;
+    opacity: 1;
+}
+
+.contact__title {
+    margin-bottom: 1rem;
+}
+
+.contact__section {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+    max-height: 70rem;
+    width: 100%;
+    max-width: 70rem;
+    padding: 4rem 4rem 2rem;
+
+    background-color: #34547A;
+    border-radius: .5rem;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 1s ease-in-out;
+}
+
+.contact__form--visible {
+    transform: none;
+    opacity: 1;
+}
+
+.form__group--contact {
+    margin-bottom: 3rem;
+}
+
+.form__contact--textarea {
+    overflow: hidden;
+    resize: none;
+    outline: none;
+}
+
+.form__footer--contact {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.contact__subtitle {
+    margin: .5rem;
+
+    font-family: inherit;
+    font-size: 1.6rem;
+    text-align: center;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(-200px);
+    transition: all 1s ease-in-out;
+}
+
+.contact__subtitle--visible {
+    transform: none;
+    opacity: 1;
+}
+
+.contact__platforms {
+    margin: auto 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%t;
+
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #34547A;
+
+    position: relative;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 1s ease-in-out;
+}
+
+.contact__platforms--visible {
+    transform: none;
+    opacity: 1;
+}
+
+.contact__platforms a {
+    color: #34547A;
+}
+
+.click_to_copy {
+    cursor: pointer;
+}
+
+.contact__hint {
+    display: none;
+}
+
+.click_to_copy:hover,
+.click_to_copy:focus {
+    display: none;
+}
+
+.click_to_copy:hover+.contact__hint,
+.click_to_copy:focus+.contact__hint {
+    display: block;
+    box-shadow: inset 0 0 0 4px #E5E5E5;
+    transition: all 0.5s ease;
+}
+
+
 
 /* Footer
 ===============================*/
@@ -642,7 +773,8 @@ input {
     transition: transform .4s linear, opacity .4s linear;
 }
 
-.modal__close:hover {
+.modal__close:hover,
+.modal__close:focus {
     outline: none;
     transform: rotate(90deg);
     opacity: 1;
@@ -668,7 +800,8 @@ input {
     text-decoration: underline;
 }
 
-.modal__footer a:hover {
+.modal__footer a:hover,
+.modal__footer a:focus {
     text-decoration: none;
 }
 
@@ -686,7 +819,7 @@ input {
 
 /* End of modal ===============================*/
 
-/* Output
+/* Output (for privacy notice modal)
 ===============================*/
 
 .output {
@@ -709,11 +842,6 @@ input {
 /* Form 
 ===============================*/
 
-.form--auth {
-    max-width: 28rem;
-    margin: 0 auto;
-}
-
 .form__group {
     margin-bottom: 1.5rem;
     position: relative;
@@ -731,9 +859,9 @@ input {
     background: none;
     border: none;
     border-bottom: 1px solid #6B90BD;
-    /* чтобы в браузере Safari на IOS устройствах не появлялся, как по умолчанию */
+    /* it does not appear in the Safari browser on IOS devices, as by default */
     border-radius: 0;
-    /* чтобы в браузере Safari на IOS устройствах не появлялся, как по умолчанию */
+    /* it does not appear in the Safari browser on IOS devices, as by default */
     box-shadow: none;
 
     font-family: inherit;
@@ -745,8 +873,7 @@ input {
     color: rgba(169, 169, 169, .6);
 }
 
-.form__control:focus+.form_line {
-    /* при фокусе на form_control линия form_line будет увеличиваться по ширине до 100% */
+.form__control:focus+.form__line {
     width: 100%;
 }
 
@@ -770,27 +897,6 @@ input {
 
     transition: width .4s linear;
 }
-
-/* .form__footer--center {
-    text-align: center;
-}
-
-.form__footer-list {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-
-    font-size: 1.2rem;
-    line-height: 1.2;
-}
-
-.form__footer-list>li {
-    margin: 0 .5rem;
-}
-
-.form__footer-list>a {
-    color: rgba(169, 169, 169, .6);
-} */
 
 /* End of form ===============================*/
 
@@ -924,8 +1030,16 @@ input {
         padding: 0 1.3rem;
     }
 
+    .contact__platforms a {
+        font-size: 2rem;
+    }
+
     .footer {
         height: 5rem;
+    }
+
+    .footer__copyright {
+        margin-bottom: 2px;
     }
 
     .btn--small+.btn {
@@ -935,7 +1049,7 @@ input {
     /* Burger-navigation
 ===============================*/
 
-    /*отключаем скролл контента под открытым бургер-меню*/
+    /*disable scrolling of content under the open burger menu*/
     .body.lock {
         overflow: hidden;
     }
@@ -1025,7 +1139,7 @@ input {
         left: 0;
         width: 100%;
         height: 100%;
-        /*добавляем скролл бургер-меню, если оно не умещается на экран*/
+        /*add a scrolling burger menu if it does not fit on the screen*/
         overflow: auto;
         background-color: rgba(52, 84, 122, 0.85);
 
@@ -1041,7 +1155,7 @@ input {
         display: block;
     }
 
-    /*Увеличиваем шрифт меню при адаптиве*/
+    /*Increasing the font of the menu when responsive*/
     .nav__item {
         margin: 0 0 2rem 0;
         display: inline-block;
@@ -1101,6 +1215,7 @@ input {
         margin: .5rem;
         font-size: 1.1rem;
     }
+
 }
 
 /* End of Media max-width: 379px  ===============================*/

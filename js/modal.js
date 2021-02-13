@@ -48,3 +48,10 @@ modals.forEach((el) => {
     item.onclick = () => CloseModal(modals);
   });
 });
+
+//============ For modal on contact page ============//
+
+
+
+
+

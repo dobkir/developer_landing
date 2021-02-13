@@ -147,7 +147,7 @@
                         <li><strong>HTML</strong>. I use semantic HTML markup to reinforce the semantics, which improves
                             SEO optimization and positively affects the ranking of the site by search engines</li>
                         <li><strong>CSS</strong>. Includes CSS preprocessing SASS and SCSS. Modern CSS tools allow us to
-                            create responsive web desig. It makes your web page look good on all devices.</li>
+                            create responsive web design. It makes your web page look good on all devices.</li>
                         <li><strong>JavaScript</strong>. That allows users to interact with the web page.</li>
                         <li><strong>Gulp</strong> as a task runner.</li>
                         <li><strong>Webpack</strong> as a bundler.</li>
@@ -156,7 +156,7 @@
                         <li><strong>Optimization and bug-testing tools</strong> at all stages of development.</li>
                     </ul>
                 </div>
-                
+
             </div>
             <!--/.about-->
 
@@ -203,20 +203,105 @@
                         </use>
                     </svg></a>
                 <div class="contact__story">
-                    <h2>Contact</h2>
+                    <h2 class="contact__title">Contact</h2>
+                    <p class="contact__section">If you are looking for the best solutions for your website, just contact
+                        me.</p>
                 </div>
-                <div class="contact__numbers">
-                    <p>Contact here</p>
-                </div>
+
+                <!--Contact form on contact page-->
+                <div class="contact__form">
+
+                    <!-- Contact form -->
+                    <form class="form" action="">
+                        <div class="form__group form_group--contact">
+                            <input class="form__control" type="text" placeholder="Your Name">
+                            <span class="form__line"></span>
+                        </div>
+
+                        <div class="form__group form__group--contact">
+                            <input class="form__control" type="email" placeholder="E-mail">
+                            <span class="form__line"></span>
+                        </div>
+
+                        <div class="form__group form__group--contact">
+                            <textarea class="form__control form__contact--textarea" name='Feedback area'
+                                placeholder="Your Feedback"></textarea>
+                            <span class="form__line"></span>
+                        </div>
+
+                        <div class="form__footer form__footer--contact">
+                            <div class="form__group form__group--contact">
+                                <button class="btn btn--small" type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form><!-- /.contact form -->
+
+                </div><!-- /.Contact form on contact page-->
+
+                <h3 class="contact__subtitle">Feel free to contact through any platforms below:</h3>
+
+                <div class="contact__platforms">
+
+                    <p>
+                        <i class="fa fa-paper-plane-o click_to_copy"> You can e-mail me:</i>
+                        <span class="contact__hint js-copy-btn">
+                            <i class="fa fa-hand-o-right"></i>
+                            click to copy on clipboard
+                            <i class="fa fa-hand-o-left"></i>
+                        </span>
+                    </p>
+                    <p><a class="js-copy js-copy-target"
+                            href="mailto:p.kirillov2020@gmail.com">p.kirillov2020@gmail.com</a></p>
+
+                    <p>
+                        <i class="fa fa-github click_to_copy"> My GitHub:</i>
+                        <span class="contact__hint js-copy-btn">
+                            <i class="fa fa-hand-o-right"></i>
+                            click to copy on clipboard
+                            <i class="fa fa-hand-o-left"></i>
+                        </span>
+                    </p>
+
+                    <p><a class="js-copy js-copy-target" href="https://github.com/dobkir"
+                            target="blank">https://github.com/dobkir</a></p>
+                    <p>
+                        <i class="fa fa-instagram click_to_copy"> My Instagram:</i>
+                        <span class="contact__hint js-copy-btn">
+                            <i class="fa fa-hand-o-right"></i>
+                            click to copy on clipboard
+                            <i class="fa fa-hand-o-left"></i>
+                        </span>
+                    </p>
+                    <p><a class="js-copy js-copy-target" href="https://www.instagram.com/_pavelkirillov_"
+                            target="blank">https://www.instagram.com/_pavelkirillov_</a></p>
+
+                    <p>
+                        <h3 class="contact__subtitle">Need fast messaging?</h3>
+                    </p>
+
+                    <p>
+                        <i class="fa fa-whatsapp click_to_copy"> Watsapp chat with me:</i>
+                        <span class="contact__hint">
+                            <i class="fa fa-hand-o-right"></i>
+                            <a href="https://api.whatsapp.com/send?phone=79991723022&text=Hello%2C%20I'm%20here%20about..."
+                                target="blank">just click to open chat</a>
+                            <i class="fa fa-hand-o-left"></i>
+                        </span>
+                    </p>
+                    <p><a href="https://api.whatsapp.com/send?phone=79991723022&text=Hello%2C%20I'm%20here%20about..."
+                            target="blank">Click to open</a>
+                    </p>
+
+                </div><!-- /.contact__platforms-->
             </div>
             <!--/.contact-->
         </main>
         <!--/.main-->
 
         <!--Footer-->
-        <footer class="footer lock-padding">
-            <p>Copyright Pavel Kirillov © 2021. All rights reserved.</p>
-            <p>Your <a data-path="privacy__modal">privacy</a> is important to me</p>
+        <footer class="footer">
+            <p class="footer__copyright">Copyright Pavel Kirillov © 2021. All rights reserved.</p>
+            <p class="footer__privasy">Your <a data-path="privacy__modal">privacy</a> is important to me</p>
         </footer>
 
     </div>
@@ -233,28 +318,32 @@
 
                 <!--Modal__content--contact-->
                 <div class="modal__content--contact">
-                    <form class="form" action=""></form>
-                    <div class="form__group form_group--md">
-                        <input class="form__control" type="text" placeholder="Your Name">
-                        <span class="form__line"></span>
-                    </div>
 
-                    <div class="form__group form__group--md">
-                        <input class="form__control" type="email" placeholder="E-mail">
-                        <span class="form__line"></span>
-                    </div>
-
-                    <div class="form__group form__group--md">
-                        <textarea class="form__control form__control--textarea" placeholder="Your Feedback"></textarea>
-                        <span class="form__line"></span>
-                    </div>
-
-                    <div class="form__footer">
-                        <div class="form__group form__group--md">
-                            <button class="btn btn--small" type="submit">Send</button>
+                    <!-- Modal contact form -->
+                    <form class="form" action="">
+                        <div class="form__group form_group--md">
+                            <input class="form__control" type="text" placeholder="Your Name">
+                            <span class="form__line"></span>
                         </div>
-                    </div>
-                    </form><!-- /.form_footer -->
+
+                        <div class="form__group form__group--md">
+                            <input class="form__control" type="email" placeholder="E-mail">
+                            <span class="form__line"></span>
+                        </div>
+
+                        <div class="form__group form__group--md">
+                            <textarea class="form__control form__control--textarea"
+                                placeholder="Your Feedback"></textarea>
+                            <span class="form__line"></span>
+                        </div>
+
+                        <div class="form__footer">
+                            <div class="form__group form__group--md">
+                                <button class="btn btn--small" type="submit">Send</button>
+                            </div>
+                        </div>
+                    </form><!-- /.Modal contact form -->
+
                 </div><!-- /.modal__content--contact-->
                 <ul class="modal__footer">
                     <li>

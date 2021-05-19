@@ -9,20 +9,29 @@ $(document).ready(() => {
   $('.nav__item').click((event) => {
     $('.nav__burger, .nav').toggleClass('active')
   })
-  // Smooth scrolling of pages
-  let $page = $('html, body');
-  $('a[href*="#"]').click(function () {
-    $page.animate({
-      scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1000);
-    return false;
-  });
+
+  //============ Smooth scrolling of pages ============//
+  // The link must contain something other than the hash
+  const smoothScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
+
+  smoothScrollElems.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const id = link.getAttribute('href').substring(1)
+      document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+      })
+    })
+  })
 
   // When hovering or focusing on #btn_home, the opacity of the overlay changes
   $('.btn').hover((event) => {
     $('.overlay, .home__title, .home__description').toggleClass('opacity--1')
   })
 })
+//============ End of Smooth scrolling of pages ============//
+
 
 //============ Page observer ============//
 const contactStory = document.querySelector('.contact__story');
@@ -34,7 +43,7 @@ const links = document.querySelectorAll('.nav__item');
 const options = {
   root: document.querySelector('home'),
   rootMargin: '0px',
-  threshold: 0.7
+  threshold: 0.8
 };
 
 function activeLink(element) {

@@ -33,57 +33,110 @@ $(document).ready(() => {
 //============ End of Smooth scrolling of pages ============//
 
 
-//============ Page observer ============//
+
+//============ Page observer. Newest version ============//
+// init the observer
+const options = {
+  root: document.querySelector('home'),
+  rootMargin: '80px',
+  threshold: 0.8
+}
+
+// init animated elems on contact page
 const contactStory = document.querySelector('.contact__story');
 const contactForm = document.querySelector('.contact__form');
 const contactSubtitle = document.querySelector('.contact__subtitle');
 const contactPlatforms = document.querySelector('.contact__platforms');
-const targets = document.querySelectorAll('div[id]');
-const links = document.querySelectorAll('.nav__item');
-const options = {
-  root: document.querySelector('home'),
-  rootMargin: '0px',
-  threshold: 0.8
-};
+const contactsArr = [contactStory, contactForm, contactSubtitle, contactPlatforms];
 
-function activeLink(element) {
-  element.classList.add('active__link');
-};
+// init the observer
+const observer = new IntersectionObserver(changeNav, options);
 
-function removeActiveLink(element) {
-  element.classList.remove('active__link');
-};
-
-const loadID = function (entries, observer) {
-  entries.forEach(entry => {
-    links.forEach(link => {
-      if (entry.isIntersecting && entry.target.id === link.hash.substring(1)) {
-        return activeLink(link);
-      }
-      if (entry.isIntersecting && entry.target.id !== link.hash.substring(1))
-        return removeActiveLink(link);
-    });
-    if (entry.target.id === 'contact__page') {
-      contactStory.classList.add('contact__story--visible');
-      contactForm.classList.add('contact__form--visible');
-      contactSubtitle.classList.add('contact__subtitle--visible');
-      contactPlatforms.classList.add('contact__platforms--visible');
-    } else {
-      contactStory.classList.remove('contact__story--visible');
-      contactForm.classList.remove('contact__form--visible');
-      contactSubtitle.classList.remove('contact__subtitle--visible');
-      contactPlatforms.classList.remove('contact__platforms--visible');
-    };
-  });
-};
-
-const observer = new IntersectionObserver(loadID, options);
-
-targets.forEach(target => {
-  observer.observe(target);
+// target the elements to be observed
+const sections = document.querySelectorAll('section');
+sections.forEach((section) => {
+  observer.observe(section);
 });
 
-//============ End of page observer ============//
+// simple function to use for callback in the intersection observer
+function changeNav(entries, observer) {
+  entries.forEach((entry) => {
+    // verify the element is intersecting
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+      // remove old active class
+      document.querySelector('.active__link').classList.remove('active__link');
+      // get id of the intersecting section
+      let id = entry.target.getAttribute('id');
+      // find matching link & add appropriate class
+      let truthyLink = document.querySelector(`[href="#${id}"]`);
+      truthyLink.classList.add('active__link');
+      // animation of contacts on contact page
+      contactsArr.forEach(elem => {
+        if (id === 'contact__page') {
+          elem.classList.add('visible');
+        } else {
+          elem.classList.remove('visible');
+        }
+      })
+    }
+  });
+}
+
+//============ End of the page observer. Newest version ============//
+
+
+
+//============ Page observer. Oldest version ============//
+// const contactStory = document.querySelector('.contact__story');
+// const contactForm = document.querySelector('.contact__form');
+// const contactSubtitle = document.querySelector('.contact__subtitle');
+// const contactPlatforms = document.querySelector('.contact__platforms');
+// const targets = document.querySelectorAll('div[id]');
+// const links = document.querySelectorAll('.nav__item');
+// const options = {
+//   root: document.querySelector('home'),
+//   rootMargin: '0px',
+//   threshold: 0.8
+// };
+
+// function activeLink(element) {
+//   element.classList.add('active__link');
+// };
+
+// function removeActiveLink(element) {
+//   element.classList.remove('active__link');
+// };
+
+// const loadID = function (entries, observer) {
+//   entries.forEach(entry => {
+//     links.forEach(link => {
+//       if (entry.isIntersecting && entry.target.id === link.hash.substring(1)) {
+//         return activeLink(link);
+//       }
+//       if (entry.isIntersecting && entry.target.id !== link.hash.substring(1))
+//         return removeActiveLink(link);
+//     });
+//     if (entry.target.id === 'contact__page') {
+//       contactStory.classList.add('contact__story--visible');
+//       contactForm.classList.add('contact__form--visible');
+//       contactSubtitle.classList.add('contact__subtitle--visible');
+//       contactPlatforms.classList.add('contact__platforms--visible');
+//     } else {
+//       contactStory.classList.remove('contact__story--visible');
+//       contactForm.classList.remove('contact__form--visible');
+//       contactSubtitle.classList.remove('contact__subtitle--visible');
+//       contactPlatforms.classList.remove('contact__platforms--visible');
+//     };
+//   });
+// };
+
+// const observer = new IntersectionObserver(loadID, options);
+
+// targets.forEach(target => {
+//   observer.observe(target);
+// });
+
+//============ End of the page observer. Oldest version ============//
 
 //============ Contact page copy e-mail to clipboard ============//
 //====== Create input or textarea

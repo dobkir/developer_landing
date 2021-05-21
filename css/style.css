@@ -37,6 +37,7 @@ a {
     color: #A9A9A9;
     text-decoration: none;
     cursor: pointer;
+    transform: none;
 }
 
 p {
@@ -139,20 +140,20 @@ input {
     transition: all .4s linear;
 }
 
-
 .nav__item:hover,
 .nav__item:focus {
-    color: #34547A;
-
-    text-decoration: none;
-
     transform: translate3d(-.5rem, .5rem, -.5rem) skew(-10deg);
+}
+
+.nav__item:active {
+    transform: none;
 }
 
 .active__link {
     transform: skew(-10deg);
     display: block;
     margin-left: 3rem;
+    margin-bottom: 2px;
 
     color: #34547A;
     text-decoration: none;
@@ -161,7 +162,7 @@ input {
         0 0 .9px #34547A;
 
     border-bottom: 3px solid #34547A;
-    margin-bottom: 2px;
+
     transition: all .4s linear;
 }
 
@@ -1228,3 +1229,8 @@ input {
 
 
 /* End of media ===============================*/
+
+.visible {
+    transform: none;
+    opacity: 1;
+}

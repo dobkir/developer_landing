@@ -10,7 +10,8 @@ $(document).ready(() => {
     $('.nav__burger, .nav').toggleClass('active')
   })
 
-  //============ Smooth scrolling of pages ============//
+  //================== Smooth scrolling of pages ==================//
+
   // The link must contain something other than the hash
   const smoothScrollElems = document.querySelectorAll('a[href^="#"]:not(a[href="#"])');
 
@@ -30,11 +31,11 @@ $(document).ready(() => {
     $('.overlay, .home__title, .home__description').toggleClass('opacity--1')
   })
 })
-//============ End of Smooth scrolling of pages ============//
+//=============== End of Smooth scrolling of pages ===============//
 
 
 
-//============ Page observer. Newest version ============//
+//============ Page observer ============//
 // init the observer
 const options = {
   root: document.querySelector('home'),
@@ -82,63 +83,12 @@ function changeNav(entries, observer) {
   });
 }
 
-//============ End of the page observer. Newest version ============//
+//==================== End of the page observer =================//
 
 
-
-//============ Page observer. Oldest version ============//
-// const contactStory = document.querySelector('.contact__story');
-// const contactForm = document.querySelector('.contact__form');
-// const contactSubtitle = document.querySelector('.contact__subtitle');
-// const contactPlatforms = document.querySelector('.contact__platforms');
-// const targets = document.querySelectorAll('div[id]');
-// const links = document.querySelectorAll('.nav__item');
-// const options = {
-//   root: document.querySelector('home'),
-//   rootMargin: '0px',
-//   threshold: 0.8
-// };
-
-// function activeLink(element) {
-//   element.classList.add('active__link');
-// };
-
-// function removeActiveLink(element) {
-//   element.classList.remove('active__link');
-// };
-
-// const loadID = function (entries, observer) {
-//   entries.forEach(entry => {
-//     links.forEach(link => {
-//       if (entry.isIntersecting && entry.target.id === link.hash.substring(1)) {
-//         return activeLink(link);
-//       }
-//       if (entry.isIntersecting && entry.target.id !== link.hash.substring(1))
-//         return removeActiveLink(link);
-//     });
-//     if (entry.target.id === 'contact__page') {
-//       contactStory.classList.add('contact__story--visible');
-//       contactForm.classList.add('contact__form--visible');
-//       contactSubtitle.classList.add('contact__subtitle--visible');
-//       contactPlatforms.classList.add('contact__platforms--visible');
-//     } else {
-//       contactStory.classList.remove('contact__story--visible');
-//       contactForm.classList.remove('contact__form--visible');
-//       contactSubtitle.classList.remove('contact__subtitle--visible');
-//       contactPlatforms.classList.remove('contact__platforms--visible');
-//     };
-//   });
-// };
-
-// const observer = new IntersectionObserver(loadID, options);
-
-// targets.forEach(target => {
-//   observer.observe(target);
-// });
-
-//============ End of the page observer. Oldest version ============//
 
 //============ Contact page copy e-mail to clipboard ============//
+
 //====== Create input or textarea
 function copyToClipboard(str) {
   let area = document.createElement('textarea');
@@ -194,3 +144,19 @@ function setAutoCopyFeatures() {
     }
   }
 }
+
+//======================== Swiper slider ========================//
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+//==================== End of  Swiper slider ====================//

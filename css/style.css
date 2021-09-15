@@ -548,12 +548,12 @@ input {
 .contact__story {
     opacity: 0;
     text-align: center;
-    transform: translateX(-200px);
+    transform: scale(.5);
     transition: all 1s ease-in-out;
 }
 
 .contact__story--visible {
-    transform: none;
+    transform: scale(1);
     opacity: 1;
 }
 
@@ -582,12 +582,12 @@ input {
 
     position: relative;
     opacity: 0;
-    transform: translateX(200px);
+    transform: scale(.5);
     transition: all 1s ease-in-out;
 }
 
 .contact__form--visible {
-    transform: none;
+    transform: scale(1);
     opacity: 1;
 }
 
@@ -615,12 +615,12 @@ input {
 
     position: relative;
     opacity: 0;
-    transform: translateX(-200px);
+    transform: scale(.5);
     transition: all 1s ease-in-out;
 }
 
 .contact__subtitle--visible {
-    transform: none;
+    transform: scale(1);
     opacity: 1;
 }
 
@@ -637,12 +637,12 @@ input {
 
     position: relative;
     opacity: 0;
-    transform: translateX(200px);
+    transform: scale(.5);
     transition: all 1s ease-in-out;
 }
 
 .contact__platforms--visible {
-    transform: none;
+    transform: scale(1);
     opacity: 1;
 }
 

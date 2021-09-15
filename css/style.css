@@ -974,8 +974,8 @@ input {
         font-size: 1.2rem;
     }
 
-    .portfolio {
-        margin: auto;
+    .swiper {
+        height: 86vh;
     }
 
     .swiper-slide {
@@ -1044,7 +1044,6 @@ input {
         border-top: 5rem solid transparent;
         margin-top: -5rem;
         min-height: calc(100vh - 5rem);
-        /* min-height: 100vh; */
     }
 
     .home__left,

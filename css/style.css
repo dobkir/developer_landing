@@ -485,7 +485,6 @@ input {
     order: 2;
     display: block;
     max-width: 768px;
-    min-width: 270px;
     width: 80%;
     height: auto;
     object-fit: contain;
@@ -979,10 +978,6 @@ input {
         margin: auto;
     }
 
-    .swiper {
-        height: auto;
-    }
-
     .swiper-slide {
         flex-direction: column;
     }
@@ -997,6 +992,10 @@ input {
 
     .swiper-slide--title .nav__item {
         color: #34547A;
+    }
+
+    .swiper-slide--image {
+        margin-bottom: 40px;
     }
 
     .swiper-slide--image img {

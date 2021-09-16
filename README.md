@@ -41,13 +41,11 @@ Link to the Swiper official docs: [https://swiperjs.com/](https://swiperjs.com/)
 
 - Others<br>
 ![JavaScript](https://img.shields.io/badge/JavaScript-26.4%25-f1e05a?logo=JavaScript&logoColor=f1e05a&style=for-the-badge)<br>
-!![CSS3](https://img.shields.io/badge/CSS3-22.7%25-563d7c?logo=CSS3&logoColor=fafafa&style=for-the-badge)
+![CSS3](https://img.shields.io/badge/CSS3-22.7%25-563d7c?logo=CSS3&logoColor=fafafa&style=for-the-badge)
 
 - Through:<br>
 Swiper Library<br>
-![Swiper Slider](https://img.shields.io/badge/Swiper-=SLIDER=-a587ff?logo=Swiper&logoColor=a587ff&style=for-the-badge)<br>
-[mail.php](mail.php)<br>
-Without real sending data, just as a template-example of POST method realization
+[![Swiper Slider](https://img.shields.io/badge/Swiper-=SLIDER=-a587ff?logo=Swiper&logoColor=a587ff&style=for-the-badge)](https://swiperjs.com/)
 
 - IDE<br>
 ![VSCode](https://img.icons8.com/color/48/000000/visual-studio-code-2019.png)<br>

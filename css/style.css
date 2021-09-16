@@ -498,6 +498,8 @@ input {
     margin-top: -8rem;
     padding: 2rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: inherit;
     min-height: calc(100vh - 8rem);
 
@@ -520,6 +522,14 @@ input {
     bottom: 1px;
 
     box-shadow: 0 3px 3px rgba(52, 84, 122, 0.6);
+}
+
+.process__list {
+    font-size: 2.2rem;
+}
+
+.process__list--item {
+    margin-bottom: 10px;
 }
 
 /* Contact

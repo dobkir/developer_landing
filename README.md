@@ -87,5 +87,5 @@ Project Link: [https://github.com/dobkir/developer_landing](https://github.com/d
 [license-url]: https://github.com/dobkir/developer_landing/blob/master/LICENSE.txt
 [repo-size-shield]: https://img.shields.io/github/repo-size/dobkir/developer_landing.svg?style=for-the-badge
 [languages-shield]: https://img.shields.io/github/languages/count/dobkir/developer_landing.svg?style=for-the-badge
-[main-language-shield]: https://img.shields.io/github/languages/top/dobkir/developer_landing.svg?style=for-the-badge&color=563d7c
+[main-language-shield]: https://img.shields.io/github/languages/top/dobkir/developer_landing.svg?style=for-the-badge&color=e34c26
 [product-screenshot]: https://github.com/dobkir/trailers/blob/master/developer_landing_trailer/developer_landing_trailer.gif
